@@ -42,6 +42,7 @@ GEM
     builder (3.2.3)
     byebug (10.0.2)
     concurrent-ruby (1.0.5)
+    cors (1.0.0)
     crass (1.0.4)
     erubi (1.7.1)
     globalid (0.4.1)
@@ -111,6 +112,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  cors
   pg (>= 0.18, < 2.0)
   puma (~> 3.7)
   rails (~> 5.1.6)
