@@ -5,9 +5,9 @@ class V1::UsersController < ApplicationController
 		if @user.save
 			render json: id_email_as_json , status: :created
 		else 
-			#head(:unprocessable_entity)
+			head(:unprocessable_entity)
 			#render json: @user.errors.full_messages
-			render json: @user
+			#render json: @user
 		end
 	end
 
