@@ -1,8 +1,8 @@
 class V1::ShopsController < ApplicationController
 
 	 def nearby_shops
-		@shops = Array.new(Shop.within(params[:longitude], params[:latitude], params[:distance]))
-				#Array.new(Shop.within(-6.80604, 33.94889 , 10000))		
+		@shops = #Array.new(Shop.within(params[:longitude], params[:latitude], params[:distance]))
+				Array.new(Shop.within(-6.80604, 33.94889 , 10000))		
 		
 		@shops.delete_if {|shop| liked_shops.include?(shop) } 
 
@@ -40,11 +40,11 @@ class V1::ShopsController < ApplicationController
 
 
 	private def liked_shops
-		@shops=[]
+		shops=[]
 		likes = User.where(id: params[:user_id]).first.likes
 		for i in 0..likes.size-1
-   			@shops[i] = likes[i].shop
+   			shops[i] = likes[i].shop
 		end
-		return @shops
+		return shops
 	end
 end
