@@ -4,7 +4,7 @@ class V1::ShopsController < ApplicationController
 		@shops = #Array.new(Shop.within(params[:longitude], params[:latitude], params[:distance]))
 				Array.new(Shop.within(-6.80604, 33.94889 , 10000))		
 		
-		@shops.delete_if {|shop| liked_shops.include?(shop) } 
+		@shops.delete_if {|shop| liked_shops.include?(shop) }
 
 		if @shops
 		 	render json: @shops, status: :ok
@@ -38,6 +38,15 @@ class V1::ShopsController < ApplicationController
 		end
 	end
 
+	def remove
+    	@like = Like.where(user: User.find(params[:user_id]), shop: Shop.find(params[:shop_id])).first
+		if @like.delete
+			head(:ok)
+		else
+			head(:unprocessable_entity)
+		end
+  	end
+
 
 	private def liked_shops
 		shops=[]
@@ -47,4 +56,5 @@ class V1::ShopsController < ApplicationController
 		end
 		return shops
 	end
+
 end
