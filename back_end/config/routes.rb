@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   namespace :v1 do
   	resources :users
 
+    get "users/:user_id/preferred_shops"  => "shops#preferred_shops"   # list all liked shops by a user 
+
     get "user/:user_id/like/shops/:shop_id"     => "shops#like"  
     get "user/:user_id/dislike/shops/:shop_id"  => "shops#dislike" 
     
+
   end
 end
