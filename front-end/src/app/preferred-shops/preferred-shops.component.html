@@ -1,2 +1,9 @@
 <h3>preferred-shops works!</h3>
-<app-preferred-shop></app-preferred-shop>
+<div>
+  <ul>
+    <li *ngFor ="let preferredShop of preferredShops">
+      <app-preferred-shop [preferredShop]="preferredShop"></app-preferred-shop>
+    </li>
+  </ul>
+</div>
+

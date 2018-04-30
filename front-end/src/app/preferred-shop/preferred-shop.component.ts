@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-preferred-shop',
@@ -11,5 +12,6 @@ export class PreferredShopComponent implements OnInit {
 
   ngOnInit() {
   }
+   @Input() preferredShop : any
 
 }

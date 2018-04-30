@@ -11,6 +11,7 @@ import { PreferredShopsComponent } from './preferred-shops/preferred-shops.compo
 import { PreferredShopComponent } from './preferred-shop/preferred-shop.component';
 import { NearbyShopsComponent } from './nearby-shops/nearby-shops.component';
 import { NearbyShopComponent } from './nearby-shop/nearby-shop.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { NearbyShopComponent } from './nearby-shop/nearby-shop.component';
     NearbyShopComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

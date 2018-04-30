@@ -1,3 +1,15 @@
-<p>
-  preferred-shop works!
-</p>
+<p>preferred-shop works!</p>
+<div *ngIf="preferredShop">
+  <div>
+      <div>{{preferredShop.name}}</div>
+  <div>
+  
+      <img src="{{preferredShop.picture}}">
+
+  </div>
+     <button>Remove</button>
+  </div>
+</div>
+
+
+
