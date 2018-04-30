@@ -1,2 +1,9 @@
 <h3>nearby-shops works!</h3>
-<app-nearby-shop></app-nearby-shop>
+<div>
+    <ul>
+      <li *ngFor ="let nearbyShop of nearbyShops">
+        <app-nearby-shop [nearbyShop]="nearbyShop"></app-nearby-shop>
+      </li>
+    </ul>
+</div>
+  

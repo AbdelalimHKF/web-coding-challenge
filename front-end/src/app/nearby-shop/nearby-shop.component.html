@@ -1,3 +1,11 @@
-<p>
-  nearby-shop works!
-</p>
+<p> nearby-shop works!</p>
+<div *ngIf="nearbyShop">
+  <div >
+      <div>{{nearbyShop.name}}<div>
+  </div >
+      <img  src="{{nearbyShop.picture}}">
+  <div >
+      <button >Like</button>
+      <button >Dislike</button>
+  </div >
+</div >
