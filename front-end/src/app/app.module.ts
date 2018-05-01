@@ -12,6 +12,7 @@ import { PreferredShopComponent } from './preferred-shop/preferred-shop.componen
 import { NearbyShopsComponent } from './nearby-shops/nearby-shops.component';
 import { NearbyShopComponent } from './nearby-shop/nearby-shop.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SessionService } from './session.service';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [SessionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
