@@ -1,5 +1,4 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { ActionService } from '../action.service';
 
 @Component({
@@ -13,9 +12,8 @@ export class NearbyShopComponent implements OnInit {
 
   ngOnInit() {
   }
-  @Input() nearbyShop : any
 
-  url : String;
+  @Input() nearbyShop : any
 
   like(shop_id : number ){
     this.actionService.like(shop_id);
