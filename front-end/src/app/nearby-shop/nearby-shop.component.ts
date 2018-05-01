@@ -1,5 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ActionService } from '../action.service';
 
 @Component({
   selector: 'app-nearby-shop',
@@ -8,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NearbyShopComponent implements OnInit {
 
-  constructor( private http : HttpClient) { }
+  constructor( private http : HttpClient, private actionService : ActionService) { }
 
   ngOnInit() {
   }
@@ -17,11 +18,7 @@ export class NearbyShopComponent implements OnInit {
   url : String;
 
   like(shop_id : number ){
-       //user/:user_id/like/shops/:shop_id
-       this.http.get("http://localhost:3000/v1/user/1/like/shops/"+shop_id)
-    .subscribe(data => {
-      console.log(data);
-    });
+    this.actionService.like(shop_id);
   }
 
   dislike(shop_id : number ){
