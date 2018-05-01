@@ -9,7 +9,7 @@ import { ActionService } from '../action.service';
 })
 export class NearbyShopComponent implements OnInit {
 
-  constructor( private http : HttpClient, private actionService : ActionService) { }
+  constructor(private actionService : ActionService) { }
 
   ngOnInit() {
   }
@@ -22,10 +22,6 @@ export class NearbyShopComponent implements OnInit {
   }
 
   dislike(shop_id : number ){
-    //api : user/:user_id/dislike/shops/:shop_id
-    this.http.get("http://localhost:3000/v1/user/1/dislike/shops/"+shop_id)
- .subscribe(data => {
-   console.log(data);
- });
-}
+    this.actionService.like(shop_id);
+  }
 }
