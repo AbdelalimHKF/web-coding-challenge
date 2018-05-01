@@ -1,3 +1,10 @@
-<p>
-  sign-in works!
-</p>
+<p> sign-in works!</p>
+<div >
+    <div>
+       <input #box_email >
+    </div>
+   <div>
+      <input #box_password type="password" >
+   </div>
+   <button (click)="sign_in(box_email.value,box_password.value)">Log In</button> 
+</div>
