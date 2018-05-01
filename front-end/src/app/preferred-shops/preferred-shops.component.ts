@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AppService } from '../app.service';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class PreferredShopsComponent implements OnInit {
   
   
-  constructor( private http : HttpClient) { }
+  constructor( private appServive: AppService) { }
 
   ngOnInit() {
     this.getPreferredShops();
@@ -19,7 +20,7 @@ export class PreferredShopsComponent implements OnInit {
   preferredShops : any;  
 
   getPreferredShops(){
-    this.http.get("http://localhost:3000/v1/users/1/preferred_shops").subscribe(data => {
+    this.appServive.getPreferredShops().subscribe(data => {
       console.log(data)
       this.preferredShops=data;
       console.log(this.preferredShops)
