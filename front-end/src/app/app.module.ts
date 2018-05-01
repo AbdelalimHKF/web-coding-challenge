@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SessionService } from './session.service';
 import { ActionService } from './action.service';
 import { EntryService } from './entry.service';
+import { AppService } from './app.service';
 
 
 @NgModule({
@@ -33,7 +34,7 @@ import { EntryService } from './entry.service';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [SessionService, ActionService, EntryService],
+  providers: [SessionService, ActionService, EntryService, AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
