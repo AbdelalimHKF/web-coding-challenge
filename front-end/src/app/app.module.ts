@@ -14,6 +14,7 @@ import { NearbyShopComponent } from './nearby-shop/nearby-shop.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SessionService } from './session.service';
 import { ActionService } from './action.service';
+import { EntryService } from './entry.service';
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import { ActionService } from './action.service';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [SessionService, ActionService],
+  providers: [SessionService, ActionService, EntryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
