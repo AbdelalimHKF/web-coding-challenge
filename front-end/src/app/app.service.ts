@@ -19,4 +19,8 @@ export class AppService {
    return  this.http.get(this.url_users+"/preferred_shops"+this.token);
   }
 
+  isUserAuthenticated(){
+    return this.sessionService.authentication_token != "";
+  }
+
 }
