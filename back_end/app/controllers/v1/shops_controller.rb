@@ -1,5 +1,9 @@
 class V1::ShopsController < ApplicationController
 
+	include ActionController::HttpAuthentication::Token::ControllerMethods
+
+	before_action :restricte_access
+
 	 def nearby_shops
 		@shops = #Array.new(Shop.within(params[:longitude], params[:latitude], params[:distance]))
 				Array.new(Shop.within(-6.80604, 33.94889 , 10000))		
@@ -55,6 +59,11 @@ class V1::ShopsController < ApplicationController
    			shops[i] = likes[i].shop
 		end
 		return shops
+	end
+
+	private def restricte_access
+		authenticated = User.where(authentication_token: params[:authentication_token]).first
+		head(:unauthorized) unless authenticated
 	end
 
 end
