@@ -20,7 +20,7 @@ export class AppService {
   }
 
   isUserAuthenticated(){
-    return this.sessionService.authentication_token != "";
+    return this.sessionService.authentication_token != undefined ;
   }
 
 }
