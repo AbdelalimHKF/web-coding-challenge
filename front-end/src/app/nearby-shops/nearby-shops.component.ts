@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-nearby-shops',
@@ -8,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NearbyShopsComponent implements OnInit {
 
-  constructor(private http : HttpClient) { }
+  constructor(private appService : AppService) { }
 
   ngOnInit() {
     this.getNearbyShops();
@@ -17,7 +18,6 @@ export class NearbyShopsComponent implements OnInit {
   nearbyShops : any
 
   getNearbyShops(){
-    this.http.get("http://localhost:3000/v1/users/1/nearby_shops")
-    .subscribe(data => {this.nearbyShops=data;});
+    this.appService.getPreferredShops().subscribe(data => {this.nearbyShops=data;});
   }
 }

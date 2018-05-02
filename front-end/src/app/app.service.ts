@@ -7,7 +7,11 @@ export class AppService {
 
   constructor(private http : HttpClient) { }
 
-  getPreferredShops(): Observable <any>{
+  getNearbyShops() : Observable <any> {
+    return this.http.get("http://localhost:3000/v1/users/1/nearby_shops");
+  }
+
+  getPreferredShops(): Observable <any> {
    return  this.http.get("http://localhost:3000/v1/users/1/preferred_shops");
   }
 
