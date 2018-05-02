@@ -18,6 +18,9 @@ export class NearbyShopsComponent implements OnInit {
   nearbyShops : any
 
   getNearbyShops(){
-    this.appService.getNearbyShops().subscribe(data => {this.nearbyShops=data;});
+    this.appService.getNearbyShops().subscribe(
+      data => {this.nearbyShops=data.body;},
+      error => {console.log(error)}
+    );
   }
 }

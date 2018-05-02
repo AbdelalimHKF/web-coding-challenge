@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { SessionService } from './session.service';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class AppService {
@@ -12,11 +13,11 @@ export class AppService {
   token: string ="?authentication_token="+this.sessionService.authentication_token;
 
   getNearbyShops() : Observable <any> {
-    return this.http.get(this.url_users+"/nearby_shops"+this.token);
+    return this.http.get(this.url_users+"/nearby_shops"+this.token,{observe :'response'});
   }
 
   getPreferredShops(): Observable <any> {
-   return  this.http.get(this.url_users+"/preferred_shops"+this.token);
+   return  this.http.get(this.url_users+"/preferred_shops"+this.token,{observe :'response'});
   }
 
   isUserAuthenticated(){

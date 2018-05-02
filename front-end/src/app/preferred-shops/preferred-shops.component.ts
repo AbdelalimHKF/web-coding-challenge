@@ -20,10 +20,15 @@ export class PreferredShopsComponent implements OnInit {
   preferredShops : any;  
 
   getPreferredShops(){
-    this.appServive.getPreferredShops().subscribe(data => {
-      console.log(data)
-      this.preferredShops=data;
-      console.log(this.preferredShops)
-      });
+    this.appServive.getPreferredShops().subscribe(
+      data => {
+        console.log(data)
+        this.preferredShops=data;
+        console.log(this.preferredShops)
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 }
