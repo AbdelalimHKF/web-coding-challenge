@@ -9,13 +9,14 @@ export class AppService {
   constructor(private http : HttpClient, private sessionService : SessionService) { }
 
   url_users : string = "http://localhost:3000/v1/users/"+this.sessionService.id;
+  token: string ="?authentication_token="+this.sessionService.authentication_token;
 
   getNearbyShops() : Observable <any> {
-    return this.http.get(this.url_users+"/nearby_shops");
+    return this.http.get(this.url_users+"/nearby_shops"+this.token);
   }
 
   getPreferredShops(): Observable <any> {
-   return  this.http.get(this.url_users+"/preferred_shops");
+   return  this.http.get(this.url_users+"/preferred_shops"+this.token);
   }
 
 }
