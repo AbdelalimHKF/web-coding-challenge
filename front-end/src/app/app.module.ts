@@ -16,6 +16,7 @@ import { SessionService } from './session.service';
 import { ActionService } from './action.service';
 import { EntryService } from './entry.service';
 import { AppService } from './app.service';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { AppService } from './app.service';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
   ],
   providers: [SessionService, ActionService, EntryService, AppService],
   bootstrap: [AppComponent]
