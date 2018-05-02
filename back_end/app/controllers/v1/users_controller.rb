@@ -1,5 +1,7 @@
 class V1::UsersController < ApplicationController
 
+	include ActionController::HttpAuthentication::Token::ControllerMethods
+
 	def create
 		@user = User.new(email: params[:email], password: params[:password])
 		if @user.save
@@ -12,6 +14,7 @@ class V1::UsersController < ApplicationController
 	end
 
 	#restrict access
+	before_action :restricte_access
 
 	def index
 		@users = User.all
@@ -49,5 +52,10 @@ class V1::UsersController < ApplicationController
 
 	private def id_email_as_json
 		@user.as_json(only: [:email, :id])
+	end
+
+	private def restricte_access
+		authenticated = User.where(authentication_token: params[:authentication_token]).first
+		head(:unauthorized) unless authenticated
 	end
 end
