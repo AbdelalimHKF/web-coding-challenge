@@ -18,8 +18,10 @@ export class NearbyShopsComponent implements OnInit {
   nearbyShops : any
 
   getNearbyShops(){
-    this.appService.getNearbyShops().subscribe(
-      data => {this.nearbyShops=data.body;},
+    this.appService.getNearbyShops()
+    .subscribe(
+      resp => {this.nearbyShops=resp.body;
+      },
       error => {console.log(error)}
     );
   }
