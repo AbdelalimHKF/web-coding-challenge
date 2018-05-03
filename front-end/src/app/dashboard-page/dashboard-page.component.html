@@ -7,10 +7,10 @@
       </p>
     </nav>
     <div>
-        <div *ngIf = "visible">
+        <div *ngIf = "nearbyShopsShowed">
           <app-nearby-shops></app-nearby-shops>
         </div>
-        <div *ngIf = "!visible">
+        <div *ngIf = "preferredShopsShowed">
           <app-preferred-shops></app-preferred-shops>
         </div>
       </div>
