@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AppService } from '../app.service';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-nearby-shops',
@@ -9,18 +10,16 @@ import { AppService } from '../app.service';
 })
 export class NearbyShopsComponent implements OnInit {
 
-  constructor(private appService : AppService) { }
+  constructor(private appService : AppService,private sharedService : SharedService ) { }
 
   ngOnInit() {
     this.getNearbyShops();
   }
 
-  nearbyShops : any
-
   getNearbyShops(){
     this.appService.getNearbyShops()
     .subscribe(
-      resp => {this.nearbyShops=resp.body;
+      resp => {this.sharedService.nearbyShops=resp.body;
       },
       error => {console.log(error)}
     );

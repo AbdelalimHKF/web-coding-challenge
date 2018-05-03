@@ -1,7 +1,7 @@
 <h3>preferred-shops works!</h3>
 <div>
   <ul>
-    <li *ngFor ="let preferredShop of preferredShops">
+    <li *ngFor ="let preferredShop of sharedService.preferredShops">
       <app-preferred-shop [preferredShop]="preferredShop"></app-preferred-shop>
     </li>
   </ul>

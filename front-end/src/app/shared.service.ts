@@ -5,4 +5,7 @@ export class SharedService {
 
   constructor() { }
 
+  preferredShops : any; 
+  nearbyShops : any;
+
 }

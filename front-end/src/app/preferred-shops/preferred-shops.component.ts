@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AppService } from '../app.service';
+import { SharedService } from '../shared.service';
 
 
 @Component({
@@ -11,20 +12,18 @@ import { AppService } from '../app.service';
 export class PreferredShopsComponent implements OnInit {
   
   
-  constructor( private appServive: AppService) { }
+  constructor( private appServive: AppService, private sharedService : SharedService ) { }
 
   ngOnInit() {
     this.getPreferredShops();
-  }
-
-  preferredShops : any;  
+  }  
 
   getPreferredShops(){
     this.appServive.getPreferredShops()
     .subscribe(
       resp => {
-        this.preferredShops=resp.body;
-        console.log(this.preferredShops)
+        this.sharedService.preferredShops=resp.body;
+        console.log(this.sharedService.preferredShops)
       },
       error => {
         console.log(error);
