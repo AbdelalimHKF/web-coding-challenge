@@ -19,6 +19,7 @@ import { AppService } from './app.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AuthGuard } from './auth.guard';
 import { SharedService } from './shared.service';
+import { FctService } from './fct.service';
 
 
 @NgModule({
@@ -38,7 +39,7 @@ import { SharedService } from './shared.service';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [SessionService, ActionService, EntryService, AppService, AuthGuard, SharedService],
+  providers: [SessionService, ActionService, EntryService, AppService, AuthGuard, SharedService, FctService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

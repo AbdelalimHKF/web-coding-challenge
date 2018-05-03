@@ -15,43 +15,19 @@ export class ActionService {
   like(shop_id : number ){
     //user/:user_id/like/shops/:shop_id
     let url = this.server_name+this.url_users+"/like/shops/"+shop_id+this.token
-    this.http.get(url,{ observe :'response'})
-      .subscribe(
-        data => {
-          console.log(data);
-        },
-        error => {
-          console.log(error);
-        }
-      );
+   return this.http.get(url,{ observe :'response'});
   }
 
   dislike(shop_id : number ){
     //api : user/:user_id/dislike/shops/:shop_id
     let url = this.server_name+this.url_users+"/dislike/shops/"+shop_id+this.token
-    this.http.get(url,{observe:'response'})
-      .subscribe(
-        resp => {
-        console.log(resp);
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    return this.http.get(url,{observe:'response'});
   }
 
   remove(shop_id : number ){
     //user/:user_id/like/shops/:shop_id
     let url = this.server_name+this.url_users+"/remove/shops/"+shop_id+this.token
-    this.http.get(url,{observe:'response'})
-      .subscribe(
-        resp => {
-         console.log(resp);
-        },
-        error => {
-          console.log(error);
-        }
-    );
+    return this.http.get(url,{observe:'response'});
   }
 
 }
