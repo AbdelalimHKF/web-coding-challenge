@@ -10,6 +10,16 @@ export class DashboardPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.visible=true
+  }
+
+  visible:boolean;
+  showNearbyShops(){
+    this.visible=!this.visible
+  }
+
+  showPreferredShops(){
+    this.visible=!this.visible
   }
 
 }

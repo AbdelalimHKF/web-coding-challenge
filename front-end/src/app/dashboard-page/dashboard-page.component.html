@@ -2,15 +2,15 @@
 <div>
     <nav class="right">
       <p>
-        <span>Nearby Shops</span>
-        <span>Preferred Shops</span>
+        <span (click)="showNearbyShops()">Nearby Shops</span>
+        <span (click)="showPreferredShops()">Preferred Shops</span>
       </p>
     </nav>
     <div>
-        <div>
+        <div *ngIf = "visible">
           <app-nearby-shops></app-nearby-shops>
         </div>
-        <div>
+        <div *ngIf = "!visible">
           <app-preferred-shops></app-preferred-shops>
         </div>
       </div>
