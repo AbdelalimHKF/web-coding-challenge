@@ -18,6 +18,7 @@ import { EntryService } from './entry.service';
 import { AppService } from './app.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AuthGuard } from './auth.guard';
+import { SharedService } from './shared.service';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import { AuthGuard } from './auth.guard';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [SessionService, ActionService, EntryService, AppService, AuthGuard],
+  providers: [SessionService, ActionService, EntryService, AppService, AuthGuard, SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
