@@ -1,0 +1,9 @@
+span {
+    cursor:pointer;
+    color:blue;
+    text-decoration:underline;
+}
+.right{
+    text-align: right;
+    margin-right: 7%;
+}
