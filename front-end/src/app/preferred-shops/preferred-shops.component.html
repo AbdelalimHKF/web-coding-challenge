@@ -1,6 +1,6 @@
 <h3>preferred-shops works!</h3>
 <div>
-  <ul>
+  <ul id="listpfs">
     <li *ngFor ="let preferredShop of sharedService.preferredShops">
       <app-preferred-shop [preferredShop]="preferredShop"></app-preferred-shop>
     </li>

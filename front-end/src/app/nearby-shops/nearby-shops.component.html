@@ -1,6 +1,6 @@
 <h3>nearby-shops works!</h3>
 <div>
-    <ul>
+    <ul id="list">
       <li *ngFor ="let nearbyShop of sharedService.nearbyShops">
         <app-nearby-shop [nearbyShop]="nearbyShop"></app-nearby-shop>
       </li>
