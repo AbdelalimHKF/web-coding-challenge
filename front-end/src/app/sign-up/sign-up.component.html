@@ -1,13 +1,19 @@
-<p>sign-up works!</p>
-<div >
-    <div>
-       <input #box_email type="email">
-    </div>
-   <div>
-      <input #box_password type="password" >
-   </div>
-   <div>
-      <input #box_confirm_password type="password" >
-   </div>
-   <button (click)="sign_up(box_email.value,box_password.value)">Sign up</button> 
-</div>
+<mat-card class="container"> 
+    <mat-form-field>
+        <input  matInput placeholder="Enter your email" #box_email >
+        <mat-error ></mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Enter your password" #box_password type="password" >
+        <mat-error ></mat-error>  
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Reenter your password" #box_confirm_password type="password">
+        <mat-hint></mat-hint>
+        <mat-error ></mat-error>  
+    </mat-form-field>
+ 
+  <button  mat-button (click)="sign_up(box_email.value,box_password.value)">Sign up</button>
+</mat-card>

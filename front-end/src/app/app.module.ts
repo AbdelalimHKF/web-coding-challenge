@@ -21,8 +21,12 @@ import { AuthGuard } from './auth.guard';
 import { SharedService } from './shared.service';
 import { FctService } from './fct.service';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+
+
 
 
 @NgModule({
@@ -41,8 +45,10 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [SessionService, ActionService, EntryService, AppService, AuthGuard, SharedService, FctService],
   bootstrap: [AppComponent]

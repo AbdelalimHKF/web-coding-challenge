@@ -1,10 +1,13 @@
-<p> sign-in works!</p>
-<div >
-    <div>
-       <input #box_email >
-    </div>
-   <div>
-      <input #box_password type="password" >
-   </div>
-   <button (click)="sign_in(box_email.value,box_password.value)">Log In</button> 
-</div>
+<mat-card class="container">
+    <mat-form-field>
+       <input matInput placeholder="Enter your email" #box_email>
+       <mat-error></mat-error>
+   </mat-form-field>
+       
+   <mat-form-field>
+           <input matInput placeholder="Enter your password" #box_password type="password">
+           <mat-error ></mat-error> 
+   </mat-form-field>
+   <button  mat-button (click)="sign_in(box_email.value,box_password.value)">Sign in</button> 
+   <mat-error></mat-error>
+</mat-card>
