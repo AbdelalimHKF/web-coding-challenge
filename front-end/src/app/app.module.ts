@@ -21,6 +21,8 @@ import { AuthGuard } from './auth.guard';
 import { SharedService } from './shared.service';
 import { FctService } from './fct.service';
 
+import {MatCardModule} from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { FctService } from './fct.service';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatCardModule
   ],
   providers: [SessionService, ActionService, EntryService, AppService, AuthGuard, SharedService, FctService],
   bootstrap: [AppComponent]

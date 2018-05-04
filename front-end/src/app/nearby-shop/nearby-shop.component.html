@@ -1,12 +1,10 @@
-<p> nearby-shop works!</p>
-<div *ngIf="nearbyShop">
-  <div >
-      <div>{{nearbyShop.name}}<div>
-          <div>{{nearbyShop.id}}<div>
-  </div >
-      <img  src="{{nearbyShop.picture}}">
-  <div >
-      <button (click)="like(nearbyShop.id)">Like</button>
-      <button (click)="dislike(nearbyShop.id)">Dislike</button>
-  </div >
-</div >
+<mat-card *ngIf="nearbyShop">
+    <mat-card-header>
+        <mat-card-title>{{nearbyShop.name}}</mat-card-title>
+    </mat-card-header>
+        <img mat-card-image src="{{nearbyShop.picture}}">
+    <mat-card-actions>
+        <button  (click)="like(nearbyShop.id)">Like</button>
+        <button  (click)="dislike(nearbyShop.id)">Dislike</button>
+    </mat-card-actions>
+</mat-card>
