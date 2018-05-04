@@ -2,18 +2,7 @@ class V1::UsersController < ApplicationController
 
 	include ActionController::HttpAuthentication::Token::ControllerMethods
 
-	def create
-		@user = User.new(email: params[:email], password: params[:password])
-		if @user.save
-			render json: id_email_as_json , status: :created
-		else 
-			head(:unprocessable_entity)
-			#render json: @user.errors.full_messages
-			#render json: @user
-		end
-	end
-
-	#restrict access
+	
 	before_action :restricte_access
 
 	def index
@@ -28,7 +17,6 @@ class V1::UsersController < ApplicationController
 			head(:not_found)
 		end
 	end
-
 
 
 	def update
