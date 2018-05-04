@@ -4,7 +4,7 @@
     </mat-card-header>
         <img mat-card-image src="{{nearbyShop.picture}}">
     <mat-card-actions>
-        <button  (click)="like(nearbyShop.id)">Like</button>
-        <button  (click)="dislike(nearbyShop.id)">Dislike</button>
+        <button class="like" mat-button (click)="like(nearbyShop.id)">Like</button>
+        <button class="dislike" mat-button (click)="dislike(nearbyShop.id)">Dislike</button>
     </mat-card-actions>
 </mat-card>

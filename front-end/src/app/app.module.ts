@@ -22,6 +22,7 @@ import { SharedService } from './shared.service';
 import { FctService } from './fct.service';
 
 import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import {MatCardModule} from '@angular/material/card';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [SessionService, ActionService, EntryService, AppService, AuthGuard, SharedService, FctService],
   bootstrap: [AppComponent]
