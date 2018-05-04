@@ -25,6 +25,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 
@@ -48,7 +49,8 @@ import {MatInputModule} from '@angular/material/input';
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatTabsModule
   ],
   providers: [SessionService, ActionService, EntryService, AppService, AuthGuard, SharedService, FctService],
   bootstrap: [AppComponent]
