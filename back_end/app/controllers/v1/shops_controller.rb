@@ -5,8 +5,8 @@ class V1::ShopsController < ApplicationController
 	before_action :restricte_access
 
 	 def nearby_shops
-		@shops = #Array.new(Shop.within(params[:longitude], params[:latitude], params[:distance]))
-				Array.new(Shop.within(-6.80604, 33.94889 , 10000))		
+		@shops = Array.new(Shop.within(params[:longitude], params[:latitude],params[:distance]))
+				#Array.new(Shop.within(-6.80604, 33.94889 , 10000))		
 		
 		@shops.delete_if {|shop| liked_shops.include?(shop) }
 
