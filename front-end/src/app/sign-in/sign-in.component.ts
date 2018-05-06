@@ -18,6 +18,8 @@ export class SignInComponent implements OnInit {
   ngOnInit() {
   }
 
+  errorMessage: String;
+
   sign_in(email : String ,password : String){
     this.entryService.sign_in(email,password)
     .subscribe(
@@ -29,7 +31,9 @@ export class SignInComponent implements OnInit {
       console.log("success ",resp.status)
       this.router.navigate(['dashboard']);
       },
-      error => {console.log("error ",error.status)}
+      error =>{
+        this.errorMessage=error.statusText;
+      }
     );
   }
 }

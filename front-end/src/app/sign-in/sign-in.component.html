@@ -9,5 +9,5 @@
            <mat-error ></mat-error> 
    </mat-form-field>
    <button  mat-button (click)="sign_in(box_email.value,box_password.value)">Sign in</button> 
-   <mat-error></mat-error>
+   <mat-error>{{errorMessage}}</mat-error>
 </mat-card>
