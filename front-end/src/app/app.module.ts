@@ -26,6 +26,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatTabsModule} from '@angular/material/tabs';
+import { LocationService } from './location.service';
 
 
 
@@ -52,7 +53,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatInputModule,
     MatTabsModule
   ],
-  providers: [SessionService, ActionService, EntryService, AppService, AuthGuard, SharedService, FctService],
+  providers: [SessionService, ActionService, EntryService, AppService, AuthGuard, SharedService, FctService, LocationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
