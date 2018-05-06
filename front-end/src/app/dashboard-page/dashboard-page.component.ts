@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocationService } from '../location.service';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -7,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardPageComponent implements OnInit {
 
-  constructor() { }
+  constructor( private locationServive : LocationService) { }
 
   ngOnInit() {
     this.nearbyShopsShowed = true;
     this.preferredShopsShowed= false;
+    this.locationServive.getCoodinate();
   }
 
   nearbyShopsShowed :boolean;
