@@ -13,7 +13,20 @@ export class SignUpComponent implements OnInit {
   ngOnInit() {
   }
 
+  errorMessage : string; 
+
   sign_up(email : String ,password : String){
-    this.entryService.sign_up(email,password);
+    this.entryService.sign_up(email,password)
+    .subscribe(
+      resp =>{
+        console.log("user created",resp.body);
+      },
+      error=>{
+        error.error.length < 2 ? 
+        this.errorMessage=error.error[0] : 
+        this.errorMessage=error.error[0]+", "+error.error[1];
+      });
   }
+
+
 }

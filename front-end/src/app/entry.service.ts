@@ -20,10 +20,7 @@ export class EntryService {
   sign_up(email : String ,password : String){
     this.user_credential.email=email;
     this.user_credential.password=password;
-    this.http.post("http://localhost:3000/v1/users",this.user_credential)
-     .subscribe(data =>{
-      console.log("user created",data);
-    });
+    return this.http.post("http://localhost:3000/v1/users",this.user_credential,{observe : 'response'});
   }
 
 }
