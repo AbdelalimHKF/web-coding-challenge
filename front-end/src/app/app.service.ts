@@ -16,9 +16,10 @@ export class AppService {
   url_users : string = "http://localhost:3000/v1/users/"+this.sessionService.id;
   token: string ="?authentication_token="+this.sessionService.authentication_token;
   coordinate_params : string = "&longitude=" +this.locationServive.longitude+"&latitude="+this.locationServive.latitude;
+  distance_param : string = "&distance="+1000;
 
   getNearbyShops() : Observable <any> {
-    return this.http.get(this.url_users+"/nearby_shops"+this.token+this.coordinate_params,{observe :'response'});
+    return this.http.get(this.url_users+"/nearby_shops"+this.token+this.coordinate_params+this.distance_param,{observe :'response'});
   }
 
   getPreferredShops(): Observable <any> {
