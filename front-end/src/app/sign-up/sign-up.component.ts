@@ -14,12 +14,14 @@ export class SignUpComponent implements OnInit {
   }
 
   errorMessage : string; 
+  isUserAdded : boolean = false;
 
   sign_up(email : String ,password : String){
     this.entryService.sign_up(email,password)
     .subscribe(
       resp =>{
         console.log("user created",resp.body);
+        this.isUserAdded=true;
       },
       error=>{
         error.error.length < 2 ? 

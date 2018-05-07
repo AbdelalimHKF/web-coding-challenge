@@ -12,3 +12,8 @@
   <button  mat-button (click)="sign_up(box_email.value,box_password.value)">Sign up</button>
   <mat-error >{{errorMessage}}</mat-error>  
 </mat-card>
+<mat-card *ngIf="isUserAdded">
+    <p>
+        User added successfully  <a href="/welcome">Sign in</a> 
+    </p>
+</mat-card>
