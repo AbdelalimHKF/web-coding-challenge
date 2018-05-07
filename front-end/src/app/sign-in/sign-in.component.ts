@@ -27,8 +27,6 @@ export class SignInComponent implements OnInit {
       this.sessionService.id=resp.body.id;
       this.sessionService.email=resp.body.email;
       this.sessionService.authentication_token=resp.body.authentication_token;
-      console.log("session ",this.sessionService);
-      console.log("success ",resp.status)
       this.router.navigate(['dashboard']);
       },
       error =>{

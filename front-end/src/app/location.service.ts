@@ -12,7 +12,6 @@ export class LocationService {
       navigator.geolocation.getCurrentPosition(p =>{
        this.latitude=p.coords.longitude
        this.longitude=p.coords.latitude
-       console.log("lat ",this.longitude)
       });
     } else {console.log("can't find location");} 
    }

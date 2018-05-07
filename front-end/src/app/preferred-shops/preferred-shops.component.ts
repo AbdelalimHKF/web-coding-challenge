@@ -23,7 +23,6 @@ export class PreferredShopsComponent implements OnInit {
     .subscribe(
       resp => {
         this.sharedService.preferredShops=resp.body;
-        console.log(this.sharedService.preferredShops)
       },
       error => {
         console.log(error);
