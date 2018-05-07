@@ -28,7 +28,7 @@ export class NearbyShopComponent implements OnInit {
   }
 
   dislike(shop_id : number ){
-    this.actionService.like(shop_id)
+    this.actionService.dislike(shop_id)
     .subscribe(resp => {this.fctService.deleteShop(shop_id, this.sharedService.nearbyShops);},
                error => {console.log(error);}
     );

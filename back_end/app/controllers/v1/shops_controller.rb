@@ -9,6 +9,7 @@ class V1::ShopsController < ApplicationController
 				#Array.new(Shop.within(-6.80604, 33.94889 , 10000))		
 		
 		@shops.delete_if {|shop| liked_shops.include?(shop) }
+		@shops.delete_if {|shop| won_t_be_displayed?(shop) }
 
 		if @shops
 		 	render json: @shops, status: :ok
@@ -59,6 +60,19 @@ class V1::ShopsController < ApplicationController
    			shops[i] = likes[i].shop
 		end
 		return shops
+	end
+
+	private def won_t_be_displayed?(shop)
+		dislikes = User.where(id: params[:user_id]).first.dislikes
+		if dislike = dislikes.where(shop_id: shop.id).first 
+		 	if Time.new - dislike.created_at < 60*60*2 
+			return true
+			else
+				dislike.delete
+				return false
+			end
+		end 
+		return false
 	end
 
 	private def restricte_access
